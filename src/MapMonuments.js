@@ -185,30 +185,19 @@ componentDidMount() {
 
         return (
 
+          <div>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
 
-          <div className="container">
-           <div className="col-12">
 
-
-           <div style={{ textAlign: 'center' }}>
+          <div className="container" style={{ width: "600px", height: "500px",  float: "right" }}>
+          
            
 
-            <div className="row">
-
-         
-
-            
-            <div className="col-sm">
-            <div className="form-group">
-    <label for="exampleFormControlSelect1">A4ter l filter</label>
-    <select className="form-control" id="exampleFormControlSelect1">
-      <option>Drug 1</option>
-      <option>Drug 01</option>
-    </select>
-    </div>
-      </div>
-
-      </div>
             <Map
               animate={this.state.animate}
               center={this.state.latlng}
@@ -246,14 +235,12 @@ componentDidMount() {
             </Map>
 
 
-          </div>
-           
-           
-           </div>
+         
           
         
           
           
+          </div>
           </div>
           
         )

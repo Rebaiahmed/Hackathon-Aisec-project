@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta property="og:title" content="YALAC | anti-corruption | reporting ...">
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="bilkamcha.tn"/>
+	<meta property="og:image" content="images/local/php.jpg">
+	<meta property="og:description" content="The center intends to succour whistleblowers and victims of corruption to form their complaints and to pursue their cases, as well as investigating the given information to capture reality">
+
+    <title>billkamcha</title>
+
+   
+    <!-- GOOGLE WEB FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,600" rel="stylesheet">
+
+    <!-- BASE CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	
+    <link href="css/style.css" rel="stylesheet">
+
+	<style>
+		select {
+font-size: .9rem;
+padding: 2px 5px;
+			width: 100%; background: transparent ; height: 45px
+}
+		</style>
+
+	
+
+
+</head>
+
+<body>
+	
+	<div id="preloader">
+		<div data-loader="circle-side"></div>
+	</div><!-- /Preload -->
+	
+	<div id="loader_form">
+		<div data-loader="circle-side-2"></div>
+	</div><!-- /loader_form -->
+	
+
+	
+	<div class="container-fluid full-height">
+		<div class="row row-height">
+			<div class="col-lg-6 content-left">
+				<div class="content-left-wrapper">
+					<a href="index.html" id="logo"><img style="width: 300px; height: 150px ; float: right" src="logo.png" alt="" width="70%" height="170%"></a>
+				
+					<!-- /social -->
+					<div>
+						
+					
+					</div>
+					
+				</div>
+				<!-- /content-left-wrapper -->
+			</div>
+			<!-- /content-left -->
+
+			<div class="col-lg-6 content-right" >
+				<div style="    text-align: center;" class="content-right-wrapper">
+				
+						<!-- /top-wizard -->
+						<div>
+						
+						<form id="wrapped" method="POST" action="survey.php" class="wizard-form" novalidate="novalidate">
+							<input id="website" name="website" type="text" value="">
+							<!-- Leave for security protection, read docs for details -->
+							<div id="middle-wizard" class="wizard-branch wizard-wrapper">
+								<div class="step wizard-step current" style="">
+									<h3 class="main_question wizard-header">recherche avancé</h3>
+								<style>
+                                    select {
+    font-size: .9rem;
+    padding: 2px 5px;
+                                        width: 100%; background: transparent ; height: 45px
+}
+                                    </style>
+									<div class="form-group">
+										
+											<select class="wide required styled-select clearfix" name="country" style="display: ">
+												<option value="">zone</option>
+												<option value="mahdiya">mahdiya</option>
+												<option value="tounes">tounes</option>
+												<option value="manouba">manouba</option>
+												
+											                             
+											</select>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-3">
+											<div class="form-group">
+												<input type="text" name="temps" class="form-control" placeholder="temps">
+											</div>
+										</div>
+										<div class="col-9">
+											<div class="form-group radio_input">
+												<label class="container_radio">ouvert
+													<input type="radio" name="gender" value="Male" class="required">
+													<span class="checkmark"></span>
+												</label>
+												<label class="container_radio">fermer
+													<input type="radio" name="gender" value="Female" class="required">
+													<span class="checkmark"></span>
+												</label>
+											</div>
+										</div>
+									</div>
+									
+								</div>
+						
+								<!-- /step-->
+								<div class="step wizard-step" style="display: none;">
+									<h3 class="main_question"><strong>4/5</strong>Do you think to suggest our company to a friend or parent?</h3>
+									<div class="form-group">
+										<label class="container_radio version_2">No
+											<input type="radio" name="question_3" value="No" class="required" onchange="getVals(this, 'question_3');">
+											<span class="checkmark"></span>
+										</label>
+									</div>
+									<div class="form-group">
+										<label class="container_radio version_2">Maybe
+											<input type="radio" name="question_3" value="Maybe" class="required" onchange="getVals(this, 'question_3');">
+											<span class="checkmark"></span>
+										</label>
+									</div>
+									<div class="form-group">
+										<label class="container_radio version_2">Probably
+											<input type="radio" name="question_3" value="Probably" class="required" onchange="getVals(this, 'question_3');">
+											<span class="checkmark"></span>
+										</label>
+									</div>
+									<div class="form-group">
+										<label class="container_radio version_2">100% Sure
+											<input type="radio" name="question_3" value="100% Sure" class="required" onchange="getVals(this, 'question_3');">
+											<span class="checkmark"></span>
+										</label>
+									</div>
+									<div class="form-group">
+										<label>In no, please describe with few words why</label>
+										<textarea name="additional_message" class="form-control" style="height:100px;" placeholder="Type here additional info..." onkeyup="getVals(this, 'additional_message');"></textarea>
+									</div>
+								</div>
+								<!-- /step-->
+								<div class="submit step wizard-step" disabled="disabled" style="display: none;">
+									<h3 class="main_question"><strong>5/5</strong>Summary</h3>
+									<div class="summary">
+										<ul>
+											<li><strong>1</strong>
+												<h5>How do rate your overall satisfaction about the service provided?</h5>
+												<p id="question_1"></p>
+											</li>
+											<li><strong>2</strong>
+												<h5>How did you hear about our company?</h5>
+												<p id="question_2"></p>
+											</li>
+											<li><strong>3</strong>
+												<h5>Do you think to suggest our company to a friend or parent?</h5>
+												<p id="question_3"></p>
+												<p id="additional_message"></p>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- /step-->
+							</div>
+							<!-- /middle-wizard -->
+							<div id="bottom-wizard">
+							
+								<button type="button" name="forward" class="forward">chercher</button>
+						
+							</div>
+							<!-- /bottom-wizard -->
+						</form>
+					
+					
+					</div>
+					</div>
+					<!-- /Wizard container
+			<!-- /content-right-->
+		</div>
+		<!-- /row-->
+	</div>
+	<!-- /container-fluid -->
+
+	<!-- /cd-overlay-content -->
+
+	
+	
+	<!-- COMMON SCRIPTS -->
+	<script src="js/jquery-3.2.1.min.js"></script>
+ 
+
+	<script src="js/functions.js"></script>
+
+
+
+
+</body>
+</html>

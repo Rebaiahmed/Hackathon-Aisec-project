@@ -9,7 +9,7 @@ import Webcam from "react-webcam";
 import axios from 'axios';
 
 //import { database ,dbstore } from './firebase';
-
+import './style.css'
 
 //_____Import teh other components___________//
 //import { WelcomeComponent } from './components/WelcomeComponent';
@@ -26,6 +26,8 @@ import AlerteMsgComponent from './components/AlertMessage';
 
 import Tracking from '../src/MapMonuments';
 
+import MonumentCompoennt from './components/MonumentComponent';
+import RestaurantCompoennt from './components/RestauratnComponent';
 const URL_SOCKET = 'localhost:3001'
 
 
@@ -118,9 +120,9 @@ class App extends Component {
   componentDidMount() {
     
     //render the first Message
-    renderCustomComponent(WelcomeComponent,{"DisplayQuizz":this.DisplayQuizz,
-  "DisplayAlertes":this.DisplayAlertes ,"DisplayMap":this.DisplayMap,
-"DisplayWbeCam":this.DisplayWbeCam})
+    renderCustomComponent(WelcomeComponent,{
+  "DispMonument":this.DispMonument,"DisplayMap":this.DisplayMap,
+"DispResto" :this.DispResto})
 
 
 
@@ -336,8 +338,29 @@ DisplayMap()
   
 
 }
+//MonumentCompoennt
 
+DispMonument()
+{
+ 
+  //____display THE QUIZZ_____//
+  //render the first Message
+  renderCustomComponent(MonumentCompoennt)
+  //renderCustomComponent(DetectlostComponent,{"handleMap":this.handleMap})
+  
 
+}
+
+DispResto()
+{
+ 
+  //____display THE QUIZZ_____//
+  //render the first Message
+  renderCustomComponent(RestaurantCompoennt)
+  //renderCustomComponent(DetectlostComponent,{"handleMap":this.handleMap})
+  
+
+}
 
 
 DisplayWbeCam()
@@ -355,29 +378,121 @@ DisplayWbeCam()
 
 
   render() {
-    const divStyle = {
-      position: 'absolute',
-
-      margintop: '-50px',
-      
-      marginleft: '-150px',
-    };
+  
     return (
       <div className="container">
 
 
-< Tracking />
+
+
+	
+
+	<div className="container-fluid full-height">
+		<div className="row row-height">
+			<div className="col-lg-6 content-left">
+				<div className="content-left-wrapper">
+          <a href="index.html" id="logo"><img style={{width: "300px", height: "150px",  float: "right"}} src="./logo.png" alt="" width="70%" height="170%" /></a>
+				
+				
+					<div>
+						
+					<Tracking />
+					</div>
+					
+				</div>
+		
+			</div>
+
+      <div class="col-lg-6 content-right" >
+				<div style={{ textAlign : "center"}} class="content-right-wrapper">
+				
+					
+						<div>
+						
+						<form id="wrapped" method="POST" action="survey.php" className="wizard-form" novalidate="novalidate">
+						<input id="website" name="website" type="text" value=""></input>
+
+
+           
+							<div id="middle-wizard" className="wizard-branch wizard-wrapper">
+								<div className="step wizard-step current">
+									<h3 className="main_question wizard-header">recherche avancé</h3>
+				
+									<div className="form-group">
+										
+											<select className="form-control" name="country">
+												<option value="">zone</option>
+												<option value="mahdiya">mahdiya</option>
+												<option value="tounes">tounes</option>
+												<option value="manouba">manouba</option>
+												
+											                             
+											</select>
+										</div>
+									</div>
+									<div className="row">
+										<div className="col-3">
+											<div className="form-group">
+												<input type="text" name="temps" class="form-control" placeholder="temps" />
+											</div>
+										</div>
+										<div className="col-9">
+											<div className="form-group radio_input">
+												<label className="container_radio">ouvert
+													<input type="radio" name="gender" value="Male" className="required" />
+													<span className="checkmark"></span>
+												</label>
+												<label className="container_radio">fermer
+													<input type="radio" name="gender" value="Female" className="required" />
+													<span className="checkmark"></span>
+												</label>
+											</div>
+										</div>
+									</div>
+									
+								</div>
+					
+						
+            <div id="bottom-wizard">
+							
+              <button type="button" name="forward" className="forward">chercher</button>
+          
+            </div>
+						
+				
+						</form>
+					
+					
+					</div>
+					</div>
+          </div>
+        
+			
 
 
 
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<Widget
+          handleNewUserMessage={this.handleNewUserMessage}
+          profileAvatar={logo}
+          title="Patriflux"
+          subtitle=""/>
 
 
       
-        <Widget
-          handleNewUserMessage={this.handleNewUserMessage}
-          profileAvatar={logo}
-          title="Alzeimer"
-          subtitle=""/>
+    
       </div>
     );
   }

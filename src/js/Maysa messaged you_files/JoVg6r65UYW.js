@@ -1,0 +1,3 @@
+if (self.CavalryLogger) { CavalryLogger.start_js(["fYMq7"]); }
+
+__d("AdsDisapprovalResponseUtils",[],(function(a,b,c,d,e,f){"use strict";__p&&__p();a=function(){function a(){}var b=a.prototype;b.getDisapprovalCode=function(a){return a==null?null:a.disapproval_payload.disapproval_code};b.getDisapprovalReasonName=function(a){return a==null?"UNKNOWN":a.disapproval_payload.disapproval_reason};return a}();e.exports=new a()}),null);
